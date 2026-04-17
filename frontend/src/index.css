@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-antigravity-900: #0a0a0a;
+  --color-antigravity-800: #121212;
+  --color-antigravity-700: #1a1a1a;
+  --color-accent-glow: rgba(144, 202, 249, 0.15);
+  --color-accent-border: rgba(255, 255, 255, 0.05);
+
+  --font-sans: "Inter", "Geist", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-antigravity-900 text-white antialiased selection:bg-white/20;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.015] border border-white/[0.04] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-2xl;
+  }
+
+  .glow-hover {
+    @apply transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)];
+  }
+
+  .glow-hover:hover {
+    @apply shadow-[0_0_30px_var(--color-accent-glow)] border-white/[0.1] -translate-y-1;
+  }
+}
