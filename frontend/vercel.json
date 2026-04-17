@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:match*",
+      "destination": "https://k-notebook.onrender.com/api/:match*"
+    }
+  ]
+}
